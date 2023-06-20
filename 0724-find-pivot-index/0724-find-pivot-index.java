@@ -20,6 +20,7 @@ class Solution {
         return -1;      // If there is no index that satisfies the conditions in the problem statement...
     }
 }
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // C++ Solution:
@@ -44,6 +45,7 @@ public:
         return -1;      // If there is no index that satisfies the conditions in the problem statement...
     }
 };
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Python/Python3 Solution:
