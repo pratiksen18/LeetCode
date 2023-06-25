@@ -22,5 +22,54 @@ class Solution {
     }
 }
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+// C++ Solution:
 
+class Solution {
+public:
+    int firstUniqChar(string s) {
+        map<char, int> hmap;
+        for (int idx{}; idx < s.size(); idx++) {
+            // Everytime the character appears in the string, add one to its count
+            hmap[s[idx]]++;
+        }
+        // Traverse the string from the beginning...
+        for (int idx{}; idx < s.size(); idx++) {
+            // If the count of the char is equal to 1, it is the first distinct character in the list.
+            if (hmap[s[idx]] == 1)
+                return idx;
+        } 
+        return -1;     // if no character appeared exactly once...
+    }
+};
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Python/Python3 Solution:
+
+class Solution(object):
+    def firstUniqChar(self, s):
+        hset = collections.Counter(s);
+        # Traverse the string from the beginning...
+        for idx in range(len(s)):
+            # If the count is equal to 1, it is the first distinct character in the list.
+            if hset[s[idx]] == 1:
+                return idx
+        return -1       # If no character appeared exactly once...
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------   
+                    
+// JavaScript Solution:
+                    
+var firstUniqChar = function(s) {
+    for (let idx = 0; idx < s.length; idx++){
+        // If same...
+        if(s.indexOf(s[idx]) === s.lastIndexOf(s[idx])){
+            // return the index of that unique character
+            return idx
+        } else {
+            return -1       // If no character appeared exactly once...
+        }
+    }
+};
