@@ -14,11 +14,9 @@
  * }
  */
 
-
-
 // Java Solution:
-// Runtime: 1 ms, faster than 89.81% of Java online submissions for Binary Tree Postorder Traversal.
-// Memory Usage: 42 MB, less than 74.94% of Java online submissions for Binary Tree Postorder Traversal.
+// Runtime: 0 ms, faster than 100.00% of Java online submissions for Binary Tree Postorder Traversal.
+// Memory Usage: 40.9 MB, less than 74.94% of Java online submissions for Binary Tree Postorder Traversal.
 
 class Solution {
     public List<Integer> postorderTraversal(TreeNode root) {
@@ -54,3 +52,51 @@ class Solution {
         return sol;     // Return the solution list...
     }
 }
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// C++ Solution:
+// Runtime: 1 ms, faster than 93.22% of C++ online submissions for Binary Tree Postorder Traversal.
+// Memory Usage: 8.3 MB, less than 96.14% of C++ online submissions for Binary Tree Postorder Traversal.
+
+class Solution {
+public:
+    vector<int> postorderTraversal(TreeNode* root) {
+        vector<int> sol;
+        postorder(root, sol);
+        return sol;
+    }
+private:
+    void postorder(TreeNode* root, vector<int>& sol) {
+        if (!root)
+            return;
+        postorder(root->left, sol);
+        postorder(root->right, sol);
+        sol.push_back(root->val);
+    }
+};
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Python/Python3 Solution:
+
+class Solution(object):
+    def postorderTraversal(self, root):
+        # Base case...
+        if not root: return []
+        # Create an array list to store the solution result...
+        sol = []
+        # Create an empty stack and push the root node...
+        bag = [root]
+        # Loop till stack is empty...
+        while bag:
+            # Pop a node from the stack...
+            node = bag.pop()
+            sol.append(node.val)
+            # Push the left child of the popped node into the stack...
+            if node.left:
+                bag.append(node.left)
+            # Append the right child of the popped node into the stack...
+            if node.right:
+                bag.append(node.right)
+        return sol[::-1]       # Return the solution list...
