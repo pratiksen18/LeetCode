@@ -7,9 +7,9 @@ function memoize(fn) {
         const key = JSON.stringify(args);
         if (key in cacheObject) { return cacheObject[key]; }
         else {
-            const result = fn(...args);
-            cacheObject[key] = result;
-            return result;
+            const output = fn(...args);
+            cacheObject[key] = output;
+            return output;
         }
     }
 }
