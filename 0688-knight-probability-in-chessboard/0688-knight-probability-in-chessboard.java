@@ -3,7 +3,7 @@ class Solution {
         int[][] dir = {{-2, -1}, {-1, -2}, {1, -2}, {2, -1}, {2, 1}, {1, 2}, {-1, 2}, {-2, 1}};
         // We use dynamic programming to store the probabilities at each cell for each move...
         // The dp array is a 3-dimensional array...
-        // dp[n][r][c] represents the probability of the knight being at cell (r, c) after n moves...
+        // dp[i][r][c] represents the probability of the knight being at cell (r, c) after i moves...
         double[][][] dp = new double[k + 1][n][n];
         // At first, initialize dp[0][row][column] to 1.0, as the knight starts at the specified cell.
         dp[0][row][column] = 1.0;
@@ -28,7 +28,7 @@ class Solution {
         }
         // Initialize the output probability...
         double output = 0.0;
-        // // Sum up the output probabilities of all cells at the kth move to get the final output probability.
+        // Sum up the output probabilities of all cells at the kth move to get the final output probability.
         for (int r = 0; r < n; r++) {
             for (int c = 0; c < n; c++) {
                 output += dp[k][r][c];
