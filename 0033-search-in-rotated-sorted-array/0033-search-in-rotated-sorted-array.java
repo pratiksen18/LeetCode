@@ -1,4 +1,5 @@
-// Runtime: 1 ms, faster than 80.17% of Java online submissions for Search in Rotated Sorted Array.
+// Runtime: 0 ms, faster than 100.00% of Java online submissions for Search in Rotated Sorted Array.
+// Memory Usage: 40.3 MB, less than 99.61% of Java online submissions for Search in Rotated Sorted Array.
 class Solution {
     public int search(int[] nums, int target) {
         int beg = 0, end = nums.length-1;
